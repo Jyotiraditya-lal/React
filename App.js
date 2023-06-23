@@ -1,4 +1,4 @@
-import ExpenseItem from "./Components/ExpenseItem";
+import ExpenseItem from "./Components/Expenses/ExpenseItem";
 
 function App() {
   const expense=[{date:new Date(2023, 5, 21), city:"Pune", title:"Car Expense", price: 300}]
