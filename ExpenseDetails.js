@@ -1,18 +1,21 @@
-function ExpenseDetails(props){
-    const title=props.title;
-    const amount=props.amount;
-    const location=props.location;
+import React,{useState} from "react/client"
 
-    function DeleteHandler(){
-        console.log("Delete!!")
+function ExpenseDetails(props){
+
+
+    const [amount,setAmount]=useState(props.amount)
+
+    function clickHandler(){
+        amount=amount+100;
+        setAmount(amount);
     }
 
     return(
         <div>
-            <div>{title}</div>
-            <div>{location}</div>
+            <div>{props.title}</div>
+            <div>{props.location}</div>
             <div>{amount}</div>
-            <button onClick={DeleteHandler}>Delete Expense</button>
+            <button onClick={clickHandler}>Add Expense</button>
         </div>
         
     )
