@@ -1,21 +1,19 @@
-import React,{useState} from "react/client"
+import React from "react"
+import './ExpenseDetails.css'
+import ExpenseDate from "./ExpenseDate";
 
 function ExpenseDetails(props){
 
-
-    const [amount,setAmount]=useState(props.amount)
-
-    function clickHandler(){
-        amount=amount+100;
-        setAmount(amount);
-    }
-
     return(
-        <div>
-            <div>{props.title}</div>
+        <div className="expense-item"> 
+          <ExpenseDate date={props.date} />
+            <div className="expense-item__description">
+                <h2>{props.title}</h2>
+            </div>
             <div>{props.location}</div>
-            <div>{amount}</div>
-            <button onClick={clickHandler}>Add Expense</button>
+            <div className="expense-item__price">
+                <h2>${props.amount}</h2>    
+            </div>
         </div>
         
     )
